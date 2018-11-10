@@ -431,3 +431,10 @@ input, select {
   max-width: 7em;
   text-align: center;
 }
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%)
+}
