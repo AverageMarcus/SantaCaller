@@ -112,6 +112,7 @@ app.get('/answer', (req, res) => {
           </speak>`
         }
       ]);
+      break
     case 'Elf':
       ncco.push(...[
         {
@@ -144,42 +145,44 @@ app.get('/answer', (req, res) => {
           </speak>`
         },
       ]);
-      case 'Mrs Claus':
-        ncco.push(...[
-          {
-            "action": "talk",
-            "voiceName": "Kimberly",
-            "text": `<speak>
-            <prosody volume='soft'>
-              Oh hello ${name}. This is Mrs Claus. Santa is pretty busy right now making lots of toys with his wonderful Elves.
-              So I thought I'm help him out by finding out who's been naughty and who's been nice.
-              Have you been good this year ${name}?
-              <break time='2s' />
-              Ok dearie! I'll make sure to update your name on the list.
-              Are you all ready for Christmas?
-              <break time='2s' />
-              I'm not! We still have so much we need to prepare, but I do love the holidays. When my husband has finished delivering all the presents we sit down as a family and have a lovely Christmas dinner.
-              Oh my! That reminds me! What is it you want for Christmas ${name}?
-            </prosody>
-            </speak>`
-          },
-          {
-            "action": "input",
-            "timeOut": 2
-          },
-          {
-            "action": "talk",
-            "voiceName": "Kimberly",
-            "text": `<speak>
-            <prosody volume='soft'>
-              That sounds lovely! I'll make sure Mr Claus knows.
-              I best go now. Lots more children around the world I need to call.
-              I hope you have a wonderful Christmas.
-              Goodbye dearie.
-            </prosody>
-            </speak>`
-          },
-        ]);
+      break
+    case 'Mrs Claus':
+      ncco.push(...[
+        {
+          "action": "talk",
+          "voiceName": "Kimberly",
+          "text": `<speak>
+          <prosody volume='soft'>
+            Oh hello ${name}. This is Mrs Claus. Santa is pretty busy right now making lots of toys with his wonderful Elves.
+            So I thought I'm help him out by finding out who's been naughty and who's been nice.
+            Have you been good this year ${name}?
+            <break time='2s' />
+            Ok dearie! I'll make sure to update your name on the list.
+            Are you all ready for Christmas?
+            <break time='2s' />
+            I'm not! We still have so much we need to prepare, but I do love the holidays. When my husband has finished delivering all the presents we sit down as a family and have a lovely Christmas dinner.
+            Oh my! That reminds me! What is it you want for Christmas ${name}?
+          </prosody>
+          </speak>`
+        },
+        {
+          "action": "input",
+          "timeOut": 2
+        },
+        {
+          "action": "talk",
+          "voiceName": "Kimberly",
+          "text": `<speak>
+          <prosody volume='soft'>
+            That sounds lovely! I'll make sure Mr Claus knows.
+            I best go now. Lots more children around the world I need to call.
+            I hope you have a wonderful Christmas.
+            Goodbye dearie.
+          </prosody>
+          </speak>`
+        },
+      ]);
+      break;
   }
 
   return res.json(ncco);
